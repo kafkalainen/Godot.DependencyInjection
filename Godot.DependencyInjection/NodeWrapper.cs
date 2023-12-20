@@ -10,7 +10,7 @@ internal readonly struct NodeWrapper : INodeWrapper
 
     public NodeWrapper(Node node)
     {
-        this.Node = node;
+        this.Node = node ?? throw new ArgumentNullException(nameof(node));
     }
 
     public IEnumerable<INodeWrapper> GetChildren()
